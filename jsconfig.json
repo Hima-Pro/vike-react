@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "#/*": ["./src/*"],
+      "#a/*": ["./src/assets/*"],
+      "#c/*": ["./src/components/*"],
+      "#h/*": ["./src/hooks/*"]
+    }
+  }
+}
