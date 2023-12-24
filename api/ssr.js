@@ -1,5 +1,9 @@
 import { renderPage } from "vike/server";
 
+/**
+ * @param {import('@vercel/node').VercelRequest} req
+ * @param {import('@vercel/node').VercelResponse} res
+ */
 export default async function handler(req, res) {
   const { url } = req;
   if (url === undefined) throw new Error("req.url is undefined");
