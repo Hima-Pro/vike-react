@@ -1,0 +1,18 @@
+.appLayout {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+.appContent {
+  overflow: auto;
+  padding: 0 calc(10% + 10px);
+}
+
+@media (max-width: 800px) {
+  .appContent {
+    padding: 0 20px;
+  }
+}
