@@ -1,14 +1,4 @@
 {
-  "version": 2,
-  "name": "vike-react",
-  "env": { "NODE_ENV": "serverless" },
-  "buildCommand": "vite build",
-  "builds": [
-    {
-      "src": "server.js",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
     {
       "src": "/((?!assets/).*)",
