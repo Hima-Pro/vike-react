@@ -4,9 +4,6 @@
   "env": { "NODE_ENV": "serverless" },
   "buildCommand": "vite build",
   "outputDirectory": "dist",
-  "functions": {
-    "server.js": { "memory": 1024, "maxDuration": 10 }
-  },
   "routes": [
     {
       "src": "/((?!assets/).*)",
