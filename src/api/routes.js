@@ -13,4 +13,4 @@ const Routes = (app) => {
   };
 };
 
-module.exports = Routes;
+export default Routes;
