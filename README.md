@@ -1,5 +1,5 @@
 # vike-react
-vike react template with ssr, import-aliases, vercel deploy support and more.
+vike react template with ssr, import-aliases, express and api routes.
 
 ## Get Started
 > [NodeJS](https://nodejs.org/en/download) or [Bun.sh](https://bun.sh/docs/installation) is required to run this project !

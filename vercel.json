@@ -1,9 +1,0 @@
-{
-  "env": {
-    "NODE_SRV": "serverless"
-  },
-  "outputDirectory": ".",
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api" }
-  ]
-}

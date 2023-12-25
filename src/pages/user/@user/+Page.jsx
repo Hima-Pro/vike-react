@@ -7,7 +7,7 @@ function Page() {
   return (
     <>
       <h1>User : {routeParams.user}</h1>
-      <p>vike react template with ssr, import-aliases, vercel deploy support and more.</p>
+      <p>vike react template with ssr, import-aliases, express and api routes.</p>
     </>
   );
 }

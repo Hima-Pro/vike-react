@@ -1,4 +1,5 @@
-import express from "express";
+// import express from "express";
+const express = require("express");
 const router = express.Router({ mergeParams: true });
 
 router.get("/", (req, res) => {
@@ -12,4 +13,4 @@ const Routes = (app) => {
   };
 };
 
-export default Routes;
+module.exports = Routes;

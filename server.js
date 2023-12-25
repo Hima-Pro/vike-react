@@ -2,13 +2,12 @@ import express from "express";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { renderPage } from "vike/server";
-import Routes from "./routes.js";
+import Routes from "./src/api/routes.js";
 
 const app = express();
 app.use("/api", Routes(app).middleware);
 
 var root = dirname(fileURLToPath(import.meta.url));
-root = root.split("/").slice(0, -1).join("/");
 const isProduction = process.env.NODE_ENV === "production";
 
 if (isProduction) {
@@ -34,11 +33,7 @@ app.get("*", async (req, res, next) => {
   }
 });
 
-if(process.env.NODE_SRV === "serverless") {
-  module.exports = app;
-} else {
-  const PORT = process.env.PORT || (isProduction ? "8080" : "3000");
-  app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
-  });
-}
+const PORT = process.env.PORT || (isProduction ? "8080" : "3000");
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});

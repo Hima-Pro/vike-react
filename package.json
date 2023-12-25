@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node api/server.js",
+    "dev": "node server.js",
     "build": "vite build",
-    "preview": "cross-env NODE_ENV=production node api/server.js"
+    "preview": "cross-env NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^3.0.0",
