@@ -2,7 +2,7 @@ import express from "express";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { renderPage } from "vike/server";
-import Routes from "./api/routes.js";
+import Routes from "./src/api/routes.js";
 
 const app = express();
 app.use("/api", Routes(app).middleware);
@@ -37,5 +37,3 @@ const PORT = process.env.PORT || (isProduction ? "8080" : "3000");
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
-
-export default app;
