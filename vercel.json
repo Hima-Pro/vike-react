@@ -4,12 +4,9 @@
   "env": { "NODE_ENV": "serverless" },
   "buildCommand": "vite build",
   "outputDirectory": "dist",
-  "builds": [
-    {
-      "src": "server.js",
-      "use": "@vercel/node"
-    }
-  ],
+  "functions": {
+    "server.js": { "memory": 1024, "maxDuration": 30 }
+  },
   "routes": [
     {
       "src": "/((?!assets/).*)",
