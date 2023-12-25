@@ -5,7 +5,7 @@
   "buildCommand": "vite build",
   "outputDirectory": "dist",
   "functions": {
-    "server.js": { "memory": 1024, "maxDuration": 30 }
+    "server.js": { "memory": 1024, "maxDuration": 10 }
   },
   "routes": [
     {
