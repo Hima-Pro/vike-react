@@ -10,7 +10,7 @@ export default {
   description: "Demo showcasing Vike + React.",
   passToClient: ["routeParams"],
   extends: vikeReact,
-  stream: true,
+  // stream: true,
   favicon,
   Layout,
   Head,

@@ -1,8 +1,22 @@
 {
-  "rewrites": [
+  "version": 1,
+  "name": "vike-react",
+  "env": { "NODE_ENV": "serverless" },
+  "buildCommand": "vite build",
+  "outputDirectory": "dist",
+  "builds": [
     {
-      "source": "/((?!assets/).*)",
-      "destination": "/api/ssr.js"
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "functions": {
+    "server.js": { "memory": 1024, "maxDuration": 30 }
+  },
+  "routes": [
+    {
+      "src": "/((?!assets/).*)",
+      "dest": "/server.js"
     }
   ]
 }

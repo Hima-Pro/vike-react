@@ -1,0 +1,15 @@
+import express from "express";
+const router = express.Router({ mergeParams: true });
+
+router.get("/", (req, res) => {
+  res.json(req.headers);
+});
+
+const Routes = (app) => {
+
+  return {
+    middleware: router
+  };
+};
+
+export default Routes;
