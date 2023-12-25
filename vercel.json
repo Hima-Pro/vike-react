@@ -1,5 +1,4 @@
 {
-  "outputDirectory": "dist/dist",
   "functions": {
     "api/server.js": {
       "memory": 1024,
