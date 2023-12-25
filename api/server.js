@@ -2,12 +2,13 @@ import express from "express";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { renderPage } from "vike/server";
-import Routes from "./src/api/routes.js";
+import Routes from "./routes.js";
 
 const app = express();
 app.use("/api", Routes(app).middleware);
 
-const root = dirname(fileURLToPath(import.meta.url));
+var root = dirname(fileURLToPath(import.meta.url));
+root = root.split("/").slice(0, -1).join("/");
 const isProduction = process.env.NODE_ENV === "production";
 
 if (isProduction) {
