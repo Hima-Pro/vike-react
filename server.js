@@ -2,16 +2,15 @@ import express from "express";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { renderPage } from "vike/server";
-import Routes from "./src/api/routes.js";
+import Routes from "./api/routes.js";
 
 const app = express();
 app.use("/api", Routes(app).middleware);
 
 const root = dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === "production";
-const isServerless = process.env.NODE_ENV === "serverless";
 
-if (isProduction || isServerless) {
+if (isProduction) {
   const sirv = (await import("sirv")).default;
   app.use(sirv(`${root}/dist/client`));
 } else {
@@ -34,11 +33,9 @@ app.get("*", async (req, res, next) => {
   }
 });
 
-if (isServerless) {
-  module.exports = app;
-} else {
-  const PORT = process.env.PORT || (isProduction ? "8080" : "3000");
-  app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
-  });
-}
+const PORT = process.env.PORT || (isProduction ? "8080" : "3000");
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
+
+export default app;
