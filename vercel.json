@@ -4,10 +4,6 @@
   },
   "outputDirectory": ".",
   "rewrites": [
-    {
-      "source": "/((?!assets/).*)",
-      "destination": "/api/server.js"
-    },
     { "source": "/api/(.*)", "destination": "/api" }
   ]
 }
