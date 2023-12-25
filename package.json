@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "node api/server.js",
     "build": "vite build",
+    "vercel-build": "vite build",
     "preview": "cross-env NODE_ENV=production node api/server.js"
   },
   "dependencies": {
