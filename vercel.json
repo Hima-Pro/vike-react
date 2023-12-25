@@ -1,8 +1,8 @@
 {
-  "builds": [
-    { "src": "dist/*", "use": "@vercel/static" },
-    { "src": "*.js", "use": "@vercel/node" }
-  ],
+  "env": {
+    "NODE_SRV": "serverless"
+  },
+  "outputDirectory": ".",
   "rewrites": [
     {
       "source": "/((?!assets/).*)",

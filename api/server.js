@@ -34,7 +34,11 @@ app.get("*", async (req, res, next) => {
   }
 });
 
-const PORT = process.env.PORT || (isProduction ? "8080" : "3000");
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
-});
+if(process.env.NODE_SRV === "serverless") {
+  module.exports = app;
+} else {
+  const PORT = process.env.PORT || (isProduction ? "8080" : "3000");
+  app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
+  });
+}
