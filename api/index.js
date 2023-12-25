@@ -1,4 +1,6 @@
-const app = require('express')();
+import express from "express";
+
+const app = express();
 
 app.get('/api/:slug', (req, res) => {
   res.json(req.headers);
